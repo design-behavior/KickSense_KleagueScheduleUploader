@@ -25,6 +25,6 @@ jobs:
 
     - name: Run script
       env:
-        FIREBASE_BUCKET: YOUR_FIREBASE_BUCKET.appspot.com
+        FIREBASE_BUCKET: kicksense-19c1d.appspot.com
       run: python update_schedule.py
 
