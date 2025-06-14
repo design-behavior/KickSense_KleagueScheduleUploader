@@ -36,3 +36,10 @@ jobs:
     - name: Check Key Format
       run: cat serviceAccountKey.json | head -n 10
 
+    # ✅ 추가: 실제로 복원된 파일 내용 확인
+    - name: Debug Check Firebase Key
+      run: |
+        echo "----- serviceAccountKey.json 시작 -----"
+        cat serviceAccountKey.json
+        echo "----- serviceAccountKey.json 끝 -----"  
+
