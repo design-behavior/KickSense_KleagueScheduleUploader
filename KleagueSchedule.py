@@ -7,7 +7,13 @@ from datetime import datetime
 # ✅ 1) K리그 경기 일정 크롤링 함수
 def fetch_kleague_schedule(season, month, league_id):
     url = 'https://www.kleague.com/api/schedule/getScheduleList'
-    headers = {'Content-Type': 'application/json'}
+    headers = {
+        'Content-Type': 'application/json',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) '
+                      'AppleWebKit/537.36 (KHTML, like Gecko) '
+                      'Chrome/122.0.0.0 Safari/537.36',
+        'Referer': 'https://www.kleague.com/schedule.do'
+    }
     payload = {
         'season': season,
         'month': f'{month:02}',
@@ -20,6 +26,7 @@ def fetch_kleague_schedule(season, month, league_id):
     else:
         print(f"요청 실패: {response.status_code}")
         return None
+
 
 # ✅ 2) Firebase Storage에 업로드 함수
 def upload_to_firebase(file_path, bucket_name, remote_path, firebase_key_json):
