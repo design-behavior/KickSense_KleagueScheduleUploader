@@ -32,4 +32,7 @@ jobs:
     - name: Debug Firebase Key
       run: |
         printf '%s' "${{ secrets.FIREBASE_KEY }}" | head -n 5
+        
+    - name: Check Key Format
+      run: cat serviceAccountKey.json | head -n 10
 
