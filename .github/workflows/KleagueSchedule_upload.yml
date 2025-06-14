@@ -26,5 +26,5 @@ jobs:
     - name: Run script
       env:
         FIREBASE_BUCKET: kicksense-19c1d.appspot.com
-      run: python update_schedule.py
+      run: python KleagueSchedule.py
 
