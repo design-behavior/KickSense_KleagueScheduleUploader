@@ -28,3 +28,8 @@ jobs:
       env:
         FIREBASE_BUCKET: kicksense-19c1d.appspot.com
       run: python kleague_crawler.py
+
+    - name: Debug Firebase Key
+      run: |
+        printf '%s' "${{ secrets.FIREBASE_KEY }}" | head -n 5
+
